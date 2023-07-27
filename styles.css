@@ -1,10 +1,18 @@
 /* font-family: 'Open Sans', sans-serif; */
 /* font-family: 'Raleway', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
+
+/* Koristio sam fluid typography calculator za neke velicine (gde se pojavljuje clamp)
+            https://royalfig.github.io/fluid-typography-calculator/
+*/
 
 html {
     box-sizing: border-box;
     font-size: 100%;
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 100;
 }
 
 *,
@@ -29,7 +37,7 @@ p {
 
 img {
     width: 100%;
-    height: 100%;
+    max-width: 20rem;
     display: inline-block;
 }
 
@@ -42,7 +50,6 @@ button {
     background-color: transparent;
     cursor: pointer;
     text-align: center;
-    padding: 0.25rem 1rem;
 }
 
 ul {
@@ -59,10 +66,11 @@ ul {
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), transparent);
-    /* background-color: rgba(0, 0, 0, 0.3); */
-    backdrop-filter: blur(5px);
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), transparent); */
+    background-color: black;
+    /* backdrop-filter: blur(10px); */
     z-index: 100;
+    border-bottom: 1px orange solid;
 }
 
 .logo {
@@ -73,6 +81,38 @@ ul {
     border-radius: 100px;
 }
 
+.menu {
+    display: flex;
+}
+
+.menu-items {
+    text-align: center;
+    position: fixed;
+    top: 3rem;
+    left: 200%;
+    transform: translateX(-50%);
+    transition: 0.1s ease-in-out;
+}
+
+.menu-items.active {
+    left: 50%;
+}
+
+.menu-item {
+    width: 100vw;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: orange;
+    padding-block: 0.5rem;
+    border-bottom: 1px orange solid;
+    background-color: black;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    color: rgba(255, 165, 0, 0.8);
+}
+
 .burger {
     margin-block: auto;
     height: 30px;
@@ -80,7 +120,13 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
+}
+
+.bar {
+    width: 100%;
+    height: 2px;
+    background-color: orange;
+    transition: 0.1s ease-in-out;
 }
 
 .burger.active {
@@ -92,21 +138,15 @@ ul {
 }
 
 .burger.active .bar:nth-child(1) {
+    width: 65%;
     transform-origin: 0% 0%;
-    transform: rotate(45deg) translate(3px, -4px);
+    transform: rotate(45deg) translate(8px, -3px);
 }
 
 .burger.active .bar:nth-child(3) {
+    width: 65%;
     transform-origin: 0% 0%;
-    transform: rotate(-45deg) translate(2px, 2px);
-}
-
-.bar {
-    width: 100%;
-    height: 3px;
-    background-color: orange;
-    border-radius: 100px;
-    transition: 0.1s ease-in-out;
+    transform: rotate(-45deg) translate(6px, 3px);
 }
 
 /* MAIN */
@@ -116,13 +156,14 @@ ul {
     background-color: black;
 }
 
-.title {
+.main-title {
     color: orange;
     font-family: 'Roboto', sans-serif;
     width: fit-content;
     margin: 0 auto;
     font-weight: 900;
     font-size: 3.25rem;
+    font-size: clamp(3.25rem, 2.825242718446602rem + 1.8122977346278317vw, 5rem);
     margin-bottom: 0.75rem;
 }
 
@@ -138,29 +179,56 @@ ul {
 .line1 {
     margin-bottom: 0.3rem;
     margin-right: 3rem;
+    margin-right: clamp(3rem, -5.980582524271844rem + 38.31715210355987vw, 40rem);
 }
 
 .line2 {
     margin-left: 3rem;
+    margin-left: clamp(3rem, -5.980582524271844rem + 38.31715210355987vw, 40rem);
+    margin-bottom: 3rem;
 }
 
 /* PRODUCTS */
 
-.monitors-title {
-    margin: 1rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: orange;
+.products {
+    margin-inline: 1.75rem;
+    margin-inline: clamp(1.75rem, -2.6796116504854366rem + 18.899676375404532vw, 20rem);
+}
+
+.product-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .product {
-    margin: 1rem;
+    width: max-content;
+    margin: 1.5rem;
+    margin-block: 0.5rem;
     position: relative;
 }
 
+.product-title {
+    padding-block: 0.5rem;
+    padding-block: clamp(0.25rem, -0.12135922330097088rem + 0.517799352750809vw, 0.5rem);
+    padding-right: 1rem;
+    margin-block: 1rem;
+    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 1.0072815533980584rem + 1.035598705501618vw, 1.5rem);
+    font-weight: 400;
+    color: orange;
+    text-align: center;
+    border: orange 1px solid;
+    border-left: orange 1rem solid;
+}
+
 .img-overlay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     bottom: 5px;
+    left: 0;
     padding: 0.5rem;
     backdrop-filter: blur(2px);
     width: 100%;
@@ -183,15 +251,38 @@ ul {
 }
 
 .img-overlay-button {
-    border: 2px solid orange;
+    width: 4rem;
+    height: 4rem;
+    border: 4px solid orange;
     margin-top: 0.25rem;
     transition: 0.1s;
     border-radius: 100px;
-    font-size: 0.75rem;
+    /* padding: 0.25rem 1rem; */
+}
+
+.button-line {
+    width: 56%;
+    height: 4px;
+    background-color: orange;
+    border-radius: 100px;
+    margin-inline: auto;
+    transition: 0.1s ease-in-out;
+}
+
+.button-line-1 {
+    transform: rotate(30deg) translate(0, -6px);
+}
+
+.button-line-2 {
+    transform: rotate(-30deg) translate(0, 6px);
 }
 
 .img-overlay-button:hover {
     background-color: orange;
+}
+
+.img-overlay-button:hover .button-line {
+    background-color: white;
 }
 
 /* FOOTER */
@@ -200,7 +291,8 @@ ul {
     color: white;
     text-align: center;
     padding: 1rem 0;
-
+    border-top: 1px orange solid;
+    margin-top: 1rem;
 }
 
 .footer li {
@@ -212,4 +304,79 @@ ul {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 1000px) {
+    .burger {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-items {
+        position: static;
+        display: flex;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .menu-item {
+        width: unset;
+        padding-block: 0;
+        border-bottom: none;
+        background-color: inherit;
+        margin-left: 2rem;
+        border: 1px black solid;
+        /* border zbog hovera */
+    }
+
+    .menu-item:last-child {
+        color: black;
+        background-color: orange;
+        padding-inline: 1rem;
+        transition: 0.1s ease-in;
+    }
+
+    .product-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .menu-item:last-child:hover {
+        color: orange;
+        background-color: black;
+        border: 1px orange solid;
+    }
+
+    .img-overlay-title {
+        font-size: 1.75rem;
+    }
+    
+    .img-overlay-p {
+        font-size: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer li {
+        margin-inline: 3rem;
+        font-size: 1rem;
+        font-weight: 200;
+        cursor: pointer;
+    }
+
+    .footer li:first-child {
+        font-size: 1.25rem;
+        font-weight: 600;
+        cursor: unset;
+    }
 }

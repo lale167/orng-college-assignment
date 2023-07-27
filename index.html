@@ -13,62 +13,95 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&family=Raleway:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&family=Raleway:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
+    <!-- Slike su AI generisane -->
 </head>
 
 <body>
     <header class="header">
-        <div class="logo"> </div>
-        <nav class="burger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </nav>
-    </header>
+        <a class="logo" href="index.html"></a>
+        <div class="menu">
+            <div class="menu-items">
+                <div class="menu-item">O nama</div>
+                <div class="menu-item">Kontakt</div>
+                <div class="menu-item">Proizvodi</div>
+            </div>
+            <nav class="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </nav>
+        </div>
+    </header> 
 
     <main class="main">
         <div class="hero">
-            <h1 class="title">orng. <span class="audio">audio</span></h1>
+            <h1 class="main-title">orng. <span class="audio">audio</span></h1>
         </div>
         <div class="line line1"></div>
         <div class="line line2"></div>
         <div class="products">
             <div class="monitors">
-                <h2 class="monitors-title">Studijski monitori</h2>
-                <div class="product product1">
-                    <img src="images/monitors1.png" alt="studio monitors">
-                    <div class="img-overlay">
-                        <p class="img-overlay-title">orng. audio HS3</p>
-                        <p class="img-overlay-p">Nova generacija!</p>
-                        <button class="img-overlay-button">SAZNAJTE VIŠE</button>
+                <h2 class="product-title">Studijski monitori</h2>
+                    <div class="product-container">
+                        <div class="product product1">
+                            <img src="images/monitors1.png" alt="studio monitors"> 
+                            <div class="img-overlay">
+                                <div class="img-overlay-container">
+                                    <p class="img-overlay-title">orng. audio HS3</p>
+                                    <p class="img-overlay-p">Nova generacija!</p>
+                                </div>
+                                <button class="img-overlay-button">
+                                    <div class="button-line button-line-1"></div>
+                                    <div class="button-line button-line-2"></div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product product2">
+                            <img src="images/monitors2.png" alt="studio monitors">
+                            <div class="img-overlay">
+                                <div class="img-overlay-container">
+                                    <p class="img-overlay-title">orng. audio T5V</p>
+                                    <p class="img-overlay-p">Kućna varijanta!</p>
+                                </div>
+                                <button class="img-overlay-button">
+                                    <div class="button-line button-line-1"></div>
+                                    <div class="button-line button-line-2"></div>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="product product2">
-                    <img src="images/monitors2.png" alt="studio monitors">
-                    <div class="img-overlay">
-                        <p class="img-overlay-title">orng. audio T5V</p>
-                        <p class="img-overlay-p">Kućna varijanta!</p>
-                        <button class="img-overlay-button">SAZNAJTE VIŠE</button>
-                    </div>
-                </div>
             </div>
             <div class="headphones">
-                <h2 class="monitors-title">Slušalice</h2>
-                <div class="product product1">
-                    <img src="images/headphones1.jpg" alt="headphones">
-                    <div class="img-overlay">
-                        <p class="img-overlay-title">orng. audio HD-25</p>
-                        <p class="img-overlay-p">Najprodavaniji model!</p>
-                        <button class="img-overlay-button">SAZNAJTE VIŠE</button>
+                <h2 class="product-title">Slušalice</h2>
+                <div class="product-container">
+                    <div class="product product1">
+                        <img src="images/headphones1.jpg" alt="headphones">
+                        <div class="img-overlay">
+                            <div class="img-overlay-container">
+                                <p class="img-overlay-title">orng. audio D-25</p>
+                                <p class="img-overlay-p">Najprodavaniji model!</p>
+                            </div>
+                            <button class="img-overlay-button">
+                                <div class="button-line button-line-1"></div>
+                                <div class="button-line button-line-2"></div>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="product product2">
-                    <img src="images/headphones2.jpg" alt="headphones">
-                    <div class="img-overlay">
-                        <p class="img-overlay-title">orng. audio DT-400</p>
-                        <p class="img-overlay-p">Nova generacija!</p>
-                        <button class="img-overlay-button">SAZNAJTE VIŠE</button>
+                    <div class="product product2">
+                        <img src="images/headphones2.jpg" alt="headphones">
+                        <div class="img-overlay">
+                            <div class="img-overlay-container">
+                                <p class="img-overlay-title">orng. audio DT-3</p>
+                                <p class="img-overlay-p">Nova generacija!</p>
+                            </div>
+                            <button class="img-overlay-button">
+                                <div class="button-line button-line-1"></div>
+                                <div class="button-line button-line-2"></div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
