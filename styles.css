@@ -308,7 +308,7 @@ ul {
 
 .form-h2 {
     color: orange;
-    font-size: clamp(1.25rem, 1.0072815533980584rem + 1.035598705501618vw, 1.75rem);
+    font-size: clamp(1.5rem, 1.0072815533980584rem + 1.035598705501618vw, 1.75rem);
     font-weight: 500;
     margin-top: 0.25rem;
     margin-bottom: 1rem;
