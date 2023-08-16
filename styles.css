@@ -347,8 +347,10 @@ a {
     display: block;
     max-width: 35rem;
     max-height: 35rem;
-    width: clamp(20rem, 16.359223300970875rem + 15.533980582524274vw, 35rem); 
-    height: clamp(20rem, 16.359223300970875rem + 15.533980582524274vw, 35rem); 
+    /* width: clamp(20rem, 16.359223300970875rem + 15.533980582524274vw, 35rem); 
+    height: clamp(20rem, 16.359223300970875rem + 15.533980582524274vw, 35rem);  */
+    width: 18rem;
+    width: clamp(18rem, 13.87378640776699rem + 17.60517799352751vw, 35rem);
 }
 
 .popup span {
@@ -365,7 +367,7 @@ a {
 .popup-info {
     color: orange;
     background-color: black;
-    min-width: 20rem;
+    min-width: 18rem;
     height: 35rem;
     height: clamp(20rem, 16.359223300970875rem + 15.533980582524274vw, 35rem); 
     overflow: scroll;
@@ -593,7 +595,7 @@ a {
     }
 
     .popup-info h2 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         border-left: 0.75rem solid orange;
         padding-right: 0.75rem;
     }
